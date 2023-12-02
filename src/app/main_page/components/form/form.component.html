@@ -1,0 +1,14 @@
+<div class="form-block">
+  <strong>X:</strong>
+  <select id="x-select" [(ngModel)]="x" value="X">
+    <option *ngFor="let number of x_range" [value]="number">{{ number }}</option>
+  </select>
+
+  <strong>Y:</strong>
+  <input id="y-input" type="number" [(ngModel)]="y" min="-3" max="3">
+
+  <strong>R:</strong>
+  <select id="r-select" [(ngModel)]="r">
+    <option *ngFor="let number of r_range" [value]="number">{{ number }}</option>
+  </select>
+</div>

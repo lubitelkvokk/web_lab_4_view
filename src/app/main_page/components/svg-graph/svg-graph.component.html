@@ -1,0 +1,42 @@
+<svg class="svg-graph" width="300" height="300" (click)="handleClick($event)">
+
+  <line x1="0" y1="150" x2="300" y2="150" stroke-width="1" stroke="rgb(0,0,0)"/>
+  <line x1="150" y1="0" x2="150" y2="300" stroke-width="1" stroke="rgb(0,0,0)"/>
+  <polyline points="147,5 150,0 153,5" fill="none" stroke-width="1" stroke="rgb(0,0,0)"/>
+  <polyline points="295,147 300,150, 295,153" fill="none" stroke-width="1" stroke="rgb(0,0,0)"/>
+  <polyline points="147,5 150,0 153,5" fill="none" stroke-width="1" stroke="rgb(0,0,0)"/>
+  <polyline points="295,147 300,150, 295,153" fill="none" stroke-width="1" stroke="rgb(0,0,0)"/>
+  <text fill="rgb(0,0,0)" x="155" y="35">R</text>
+  <line x1="148" y1="30" x2="152" y2="30" stroke-width="1" stroke="rgb(0,0,0)"/>
+  <text fill="rgb(0,0,0)" x="155" y="95">R/2</text>
+  <line x1="148" y1="90" x2="152" y2="90" stroke-width="1" stroke="rgb(0,0,0)"/>
+  <text fill="rgb(0,0,0)" x="155" y="215">-R/2</text>
+  <line x1="148" y1="210" x2="152" y2="210" stroke-width="1" stroke="rgb(0,0,0)"/>
+  <text fill="rgb(0,0,0)" x="155" y="275">-R</text>
+  <line x1="148" y1="270" x2="152" y2="270" stroke-width="1" stroke="rgb(0,0,0)"/>
+  <text fill="rgb(0,0,0)" x="25" y="145">-R</text>
+  <line x1="30" y1="148" x2="30" y2="152" stroke-width="1" stroke="rgb(0,0,0)"/>
+  <text fill="rgb(0,0,0)" x="85" y="145">-R/2</text>
+  <line x1="90" y1="148" x2="90" y2="152" stroke-width="1" stroke="rgb(0,0,0)"/>
+  <text fill="rgb(0,0,0)" x="205" y="145">R/2</text>
+  <line x1="210" y1="148" x2="210" y2="152" stroke-width="1" stroke="rgb(0,0,0)"/>
+  <text fill="rgb(0,0,0)" x="265" y="145">R</text>
+  <line x1="270" y1="148" x2="270" y2="152" stroke-width="1" stroke="rgb(0,0,0)"/>
+  <defs>
+    <clipPath id="cut-off-bottom-right">
+      <rect x="30" y="30" width="120" height="120"/>
+    </clipPath>
+  </defs>
+  <circle cx="150" cy="150" r="60" clip-path="url(#cut-off-bottom-right)" opacity="0.3"/>
+  <rect x="150" y="150" height="120" width="60" opacity="0.3"/>
+  <polygon points="150,150 150,90, 210,150" fill="rgb(0,0,0)" opacity="0.3"/>
+
+  <g id="graph_points" *ngFor="let item of hits; index as i">
+    <circle [attr.cx]="item.x" [attr.cy]="item.y" r="3" stroke="rgb(0,0,0)"/>
+  </g>
+
+</svg>
+
+<div class="clear-block">
+  <button (click)="clearHits()">Clear hits</button>
+</div>

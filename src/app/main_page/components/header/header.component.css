@@ -1,0 +1,14 @@
+header {
+  width: 90%;
+  text-align: center;
+  font-family: 'Rubik One', sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  margin: 0 auto;
+  color: #76dbe7;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 20px;
+  mix-blend-mode: multiply;
+  opacity: 70%;
+  border: 1px solid black;
+}
