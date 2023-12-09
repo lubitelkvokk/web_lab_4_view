@@ -4,8 +4,6 @@ import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-form',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css'
 })

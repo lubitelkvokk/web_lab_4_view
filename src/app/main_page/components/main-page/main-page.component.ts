@@ -5,8 +5,6 @@ import {ContentComponent} from "../content/content.component";
 
 @Component({
   selector: 'app-main-page',
-  standalone: true,
-  imports: [CommonModule, HeaderComponent, ContentComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css'
 })

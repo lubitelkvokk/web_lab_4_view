@@ -7,8 +7,6 @@ import {FormComponent} from "../form/form.component";
 
 @Component({
   selector: 'app-content',
-  standalone: true,
-  imports: [CommonModule, HeaderComponent, NavbarComponent, SvgGraphComponent, FormComponent],
   templateUrl: './content.component.html',
   styleUrl: './content.component.css'
 })

@@ -5,11 +5,10 @@ import {Hit} from "../../models/Hit";
 
 @Component({
   selector: 'app-svg-graph',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './svg-graph.component.html',
   styleUrl: './svg-graph.component.css'
 })
+
 export class SvgGraphComponent implements OnInit {
 
   private _svgGraphService: SvgGraphService;
