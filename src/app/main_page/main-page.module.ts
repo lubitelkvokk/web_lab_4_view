@@ -9,6 +9,7 @@ import {SvgGraphComponent} from "./components/svg-graph/svg-graph.component";
 import {FormsModule} from "@angular/forms";
 import {MainPageRoutingModule} from "./main-page-routing.module";
 import {MainPageComponent} from "./components/main-page/main-page.component";
+import {ResultTableComponent} from "./components/result-table/result-table.component";
 
 @NgModule({
   declarations:[
@@ -17,7 +18,8 @@ import {MainPageComponent} from "./components/main-page/main-page.component";
     NavbarComponent,
     ContentComponent,
     FormComponent,
-    SvgGraphComponent
+    SvgGraphComponent,
+    ResultTableComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import {MainPageComponent} from "./components/main-page/main-page.component";
     NavbarComponent,
     ContentComponent,
     FormComponent,
-    SvgGraphComponent
+    SvgGraphComponent,
+    ResultTableComponent
   ]
 })
 export class MainPageModule{

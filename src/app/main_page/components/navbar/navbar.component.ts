@@ -7,19 +7,9 @@ import {Component} from '@angular/core';
 })
 export class NavbarComponent {
 
-  public isAuth = false;
-
-  ngInitOn(){
-    this.isAuth = false;
-  }
 
   logOut(){
-    this.isAuth = false;
+    localStorage.clear();
   }
-
-  logIn(){
-    this.isAuth = true;
-  }
-
 
 }

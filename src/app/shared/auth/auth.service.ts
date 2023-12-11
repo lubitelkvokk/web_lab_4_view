@@ -18,40 +18,46 @@ const httpOptions = {
 export class AuthService {
   authUrl = "http://localhost:8080/web_app_lab_4_war_exploded/api/user";
 
-  isAuth = false;
-
   constructor(private http: HttpClient) {
   }
 
   login(model: User) {
     return this.http.post(this.authUrl, model, {responseType: 'text'}).pipe(
-      map((data)=>{
-        this.isAuth = true;
+      map((data) => {
+        localStorage.setItem("token", data);
+        localStorage.setItem("login", model.login);
+        localStorage.setItem("password", model.password);
         return new Response(200, data);
       }),
       catchError((err) => {
-        this.isAuth = false;
         return [new Response(404, err.error)];
       })
     );
-      // .subscribe({
-      //   next: (data: any) => {
-      //     this.isAuth = true;
-      //     return new Response(200, data);
-      //   },
-      //   error: (error) => {
-      //     this.isAuth = false;
-      //     return new Response(error.code, error.error);
-      //   }
-      // });
   }
 
-
-  register(model: any) {
-
+  register(model: User){
+    return this.http.put(this.authUrl, model, {responseType: 'text'}).pipe(
+      map((data) => {
+        localStorage.setItem("login", model.login);
+        localStorage.setItem("password", model.password);
+        return new Response(200, data);
+      }),
+      catchError((err) => {
+        return [new Response(404, err.error)];
+      })
+    );
   }
+
+  setToken(token: string){
+    return localStorage.setItem("token", token);
+  }
+
+  getToken(){
+    return localStorage.getItem("token");
+  }
+
 
   loggedIn() {
-
+    return localStorage.getItem("token") !== null;
   }
 }

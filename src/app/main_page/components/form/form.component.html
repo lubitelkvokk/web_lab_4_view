@@ -1,14 +1,20 @@
-<!--<div class="form-block">-->
-<!--  <strong>X:</strong>-->
-<!--  <select id="x-select" [(ngModel)]="x" value="X">-->
-<!--    <option *ngFor="let number of x_range" [value]="number">{{ number }}</option>-->
-<!--  </select>-->
+<div class="form-block">
 
-<!--  <strong>Y:</strong>-->
-<!--  <input id="y-input" type="number" [(ngModel)]="y" min="-3" max="3">-->
+  <form (ngSubmit)="submitForm()">
+    <strong>X:</strong>
+    <select id="x-select" [(ngModel)]="hit.x" name="X">
+      <option *ngFor="let number of x_range" [value]="number">{{ number }}</option>
+    </select>
 
-<!--  <strong>R:</strong>-->
-<!--  <select id="r-select" [(ngModel)]="r">-->
-<!--    <option *ngFor="let number of r_range" [value]="number">{{ number }}</option>-->
-<!--  </select>-->
-<!--</div>-->
+    <strong>Y:</strong>
+    <input id="y-input" type="number" [(ngModel)]="hit.y" min="-3" max="3" name="Y">
+
+    <strong>R:</strong>
+    <select id="r-select" [(ngModel)]="hit.r" name="R" (ngModelChange)="rChanging()">
+      <option *ngFor="let number of r_range" [value]="number">{{ number }}</option>
+    </select>
+
+    <button id="submit-button" type="submit">SUBMIT</button>
+  </form>
+
+</div>

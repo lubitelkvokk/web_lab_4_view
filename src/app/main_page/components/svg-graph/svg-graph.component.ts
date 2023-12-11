@@ -11,11 +11,11 @@ import {Hit} from "../../models/Hit";
 
 export class SvgGraphComponent implements OnInit {
 
-  private _svgGraphService: SvgGraphService;
+
   public hits: Hit[];
 
-  constructor(svgGraphService: SvgGraphService) {
-    this._svgGraphService = svgGraphService;
+
+  constructor(private _svgGraphService: SvgGraphService) {
   }
 
   ngOnInit(): void {

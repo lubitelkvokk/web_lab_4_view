@@ -1,7 +1,6 @@
 <div class="navbar">
   <div class="user-logo-block">
-    <a [routerLink]="['/login']" routerLinkActive="active"> Login </a>
-<!--    <span (click)="logIn()" *ngIf="!isAuth" >LogIn</span>-->
+    <a [routerLink]="['/login']" routerLinkActive="active" (click)="logOut()"> LogOut </a>
     <img id="user-logo" ngSrc="assets/user-logo.svg"/>
   </div>
 </div>
