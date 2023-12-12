@@ -8,22 +8,6 @@
   justify-content: space-between;
 }
 
-/*.user-logo-block {*/
-/*  display: flex;*/
-/*  align-items: center;*/
-/*}*/
-
-/*.user-logo-block a {*/
-/*  text-decoration: none;*/
-/*  color: #fff;*/
-/*  margin-right: 10px;*/
-/*}*/
-
-/*#user-logo {*/
-/*  width: 30px;*/
-/*  height: auto;*/
-/*}*/
-
 #logout-block {
   background-color: #2980b9;
   padding: 5px 10px;

@@ -30,7 +30,6 @@ export class HitResultService {
   getHits(page_number: number, page_size: number) {
     return this.http.get(this.hitUrl + `?pageNumber=${page_number}&pageSize=${page_size}`, {responseType: 'text'}).pipe(
       map((data) => {
-        console.log(data);
         return new Response(200, data);
       }),
       catchError((err) => {

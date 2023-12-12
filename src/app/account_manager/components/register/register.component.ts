@@ -12,12 +12,11 @@ import {Subscription} from "rxjs";
 })
 export class RegisterComponent implements OnInit, OnDestroy{
 
-
   form: FormGroup;
   user: User;
   server_message: string = "";
 
-  // exclude memory leaking
+
   aSub: Subscription;
   constructor(private authService: AuthService, private router: Router) {
     this.user = new User;
@@ -28,8 +27,6 @@ export class RegisterComponent implements OnInit, OnDestroy{
   }
 
   register() {
-    // this.form.disable();
-
     this.aSub = this.authService.register(this.user)
       .subscribe({
         next: (data) => {
@@ -45,7 +42,6 @@ export class RegisterComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit(): void {
-    // this.form.enable();
     this.form = new FormGroup({
       login: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required])

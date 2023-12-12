@@ -1,6 +1,4 @@
 import {Component} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {FormsModule} from "@angular/forms";
 import {HitResultService} from "../../services/hit-result.service";
 import {Hit} from "../../models/Hit";
 import {SvgGraphService} from "../svg-graph/svg-graph.service";
@@ -28,9 +26,7 @@ export class FormComponent {
   }
 
   submitForm() {
-    // coordinates in pixels
     this.svgGraphService.addHitWithoutConverting(this.hit);
-
   }
 
 }

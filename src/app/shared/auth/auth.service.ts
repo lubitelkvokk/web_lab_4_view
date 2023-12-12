@@ -1,21 +1,14 @@
-import {Injectable} from "@angular/core";
+import {Injectable, OnInit} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {User} from "../../models/user";
 import {catchError, map} from "rxjs";
 import {Response} from "../../models/response";
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json;',
-  }),
-  // Добавляем режим 'no-cors'
-  mode: 'no-cors'
-};
 
 @Injectable({
   providedIn: "root"
 })
-export class AuthService {
+export class AuthService{
   authUrl = "http://localhost:8080/web_app_lab_4_war_exploded/api/user";
 
   constructor(private http: HttpClient) {
@@ -23,6 +16,7 @@ export class AuthService {
   }
 
   login(model: User) {
+    this.checkInitToken();
     return this.http.post(this.authUrl, model, {responseType: 'text'}).pipe(
       map((data) => {
         localStorage.setItem("token", data);
@@ -37,6 +31,7 @@ export class AuthService {
   }
 
   register(model: User){
+    this.checkInitToken();
     return this.http.put(this.authUrl, model, {responseType: 'text'}).pipe(
       map((data) => {
         localStorage.setItem("login", model.login);
@@ -60,5 +55,15 @@ export class AuthService {
 
   loggedIn() {
     return localStorage.getItem("token") !== null;
+  }
+
+  checkInitToken(): void {
+    const potentialToken = localStorage.getItem("token");
+    if (potentialToken){
+      this.setToken(potentialToken);
+    }
+    else{
+      this.setToken("");
+    }
   }
 }

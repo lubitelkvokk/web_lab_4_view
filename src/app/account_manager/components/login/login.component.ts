@@ -24,13 +24,10 @@ export class LoginComponent implements OnInit, OnDestroy{
   }
 
   submitForm() {
-
     this.login();
   }
 
   login() {
-    // this.form.disable();
-
     this.aSub = this.authService.login(this.user)
       .subscribe({
         next: (data) => {
@@ -46,7 +43,6 @@ export class LoginComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit(): void {
-    // this.form.enable();
     this.form = new FormGroup({
       login: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required])
