@@ -15,6 +15,9 @@ export class AppComponent implements OnInit{
     if (potentialToken !== null){
       this.auth.setToken(potentialToken);
     }
+    else{
+      this.auth.setToken("");
+    }
   }
 
 }

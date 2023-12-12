@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {FormsModule} from "@angular/forms";
 import {HitResultService} from "../../services/hit-result.service";
 import {Hit} from "../../models/Hit";
+import {SvgGraphService} from "../svg-graph/svg-graph.service";
 
 @Component({
   selector: 'app-form',
@@ -13,7 +14,7 @@ export class FormComponent {
 
   hit: Hit;
 
-  constructor(private hitResultService: HitResultService) {
+  constructor(private hitResultService: HitResultService, private svgGraphService: SvgGraphService) {
     this.hit = new Hit(0, 0);
   }
 
@@ -22,10 +23,14 @@ export class FormComponent {
 
   rChanging() {
     localStorage.setItem("r", "" + this.hit.r);
+    this.svgGraphService.redrawHits(this.hit.r);
+    // TODO сделать перерисовку и желательно в другом месте svg-graph.service
   }
 
   submitForm() {
-    this.hitResultService.sendHit(this.hit).subscribe();
+    // coordinates in pixels
+    this.svgGraphService.addHitWithoutConverting(this.hit);
+
   }
 
 }

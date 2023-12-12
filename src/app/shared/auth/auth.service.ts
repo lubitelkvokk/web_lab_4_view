@@ -19,6 +19,7 @@ export class AuthService {
   authUrl = "http://localhost:8080/web_app_lab_4_war_exploded/api/user";
 
   constructor(private http: HttpClient) {
+
   }
 
   login(model: User) {
