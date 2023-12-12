@@ -32,7 +32,7 @@
   <polygon points="150,150 150,90, 210,150" fill="rgb(0,0,0)" opacity="0.3"/>
 
   <g id="graph_points" *ngFor="let item of hits$ | async; index as i">
-    <circle [attr.cx]="item.x" [attr.cy]="item.y" r="3" [style.stroke]="isHitting(item) ? 'green' : 'red'"/>
+    <circle [attr.cx]="item.x" [attr.cy]="item.y" r="3" [style.stroke]="'black'" [style.fill]="isHitting(item) ? 'green' : 'red'"/>
   </g>
 
 
