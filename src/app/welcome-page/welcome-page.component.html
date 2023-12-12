@@ -1,12 +1,21 @@
 <div class="content-container">
 
   <h1>
-    WELCOME TO WEBSITE
+    WELCOME
   </h1>
 
-  <br>
-  <a [routerLink]="['/login']" routerLinkActive="active">LOGIN</a>
-  <br>
-  <a [routerLink]="['/register']" routerLinkActive="active">REGISTER</a>
+  <div class="link-block">
+    <a [routerLink]="['/login']" routerLinkActive="active">LOGIN</a>
+  </div>
+
+
+  <div class="link-block">
+    <a [routerLink]="['/register']" routerLinkActive="active">REGISTER</a>
+  </div>
+
+
+  <div class="link-block">
+    <a [routerLink]="['/main']" routerLinkActive="active">MAIN PAGE</a>
+  </div>
 
 </div>

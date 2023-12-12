@@ -1,9 +1,37 @@
-.user-logo-block{
-  float: right;
-  width: 30%;
+.navbar {
+  width: 88%;
+  margin: 0 auto;
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
-#user-logo{
-  width: 30%;
+/*.user-logo-block {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*}*/
+
+/*.user-logo-block a {*/
+/*  text-decoration: none;*/
+/*  color: #fff;*/
+/*  margin-right: 10px;*/
+/*}*/
+
+/*#user-logo {*/
+/*  width: 30px;*/
+/*  height: auto;*/
+/*}*/
+
+#logout-block {
+  background-color: #2980b9;
+  padding: 5px 10px;
+  border-radius: 5px;
   float: right;
+}
+
+#logout-block a {
+  text-decoration: none;
+  color: #fff;
 }

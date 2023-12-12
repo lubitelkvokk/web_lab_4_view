@@ -1,0 +1,36 @@
+.content-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.link-block {
+  margin-top: 15px;
+}
+
+.link-block a {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #3498db;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.link-block a:hover {
+  background-color: #2980b9;
+}
+
+.active {
+  background-color: #2980b9;
+}

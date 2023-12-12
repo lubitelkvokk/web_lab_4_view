@@ -1,4 +1,39 @@
-.svg-graph{
-  margin: 20px;
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 
+.svg-graph {
+  margin-top: 20px;
+}
+
+svg {
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+#graph_points {
+  position: absolute;
+}
+
+.clear-block {
+  margin-top: 20px;
+  text-align: center;
+}
+
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
