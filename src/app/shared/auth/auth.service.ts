@@ -20,8 +20,6 @@ export class AuthService{
     return this.http.post(this.authUrl, model, {responseType: 'text'}).pipe(
       map((data) => {
         localStorage.setItem("token", data);
-        localStorage.setItem("login", model.login);
-        localStorage.setItem("password", model.password);
         return new Response(200, data);
       }),
       catchError((err) => {
@@ -34,8 +32,6 @@ export class AuthService{
     this.checkInitToken();
     return this.http.put(this.authUrl, model, {responseType: 'text'}).pipe(
       map((data) => {
-        localStorage.setItem("login", model.login);
-        localStorage.setItem("password", model.password);
         return new Response(200, data);
       }),
       catchError((err) => {
