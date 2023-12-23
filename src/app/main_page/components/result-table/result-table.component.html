@@ -1,0 +1,28 @@
+<div class="tableContainer">
+  <table id="hit-results">
+    <thead>
+    <tr>
+      <th>X</th>
+      <th>Y</th>
+      <th>R</th>
+      <th>Current time</th>
+      <th>Hit result</th>
+    </tr>
+    </thead>
+    <ng-container *ngFor="let row of previousHits; let i=index">
+      <tr>
+        <td> {{Math.round(row.x * 100) / 100}}</td>
+        <td>{{Math.round(row.y * 100) / 100}}</td>
+        <td>{{row.r}}</td>
+        <td>{{row.time}} </td>
+        <td>{{row.hitting}}</td>
+      </tr>
+    </ng-container>
+  </table>
+
+  <div>
+    <span>Page number: </span>
+    <input [(ngModel)]="page_number" (change)="getHits()"/>
+  </div>
+
+</div>

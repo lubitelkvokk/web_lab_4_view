@@ -9,8 +9,8 @@ import {Response} from "../../models/response";
   providedIn: "root"
 })
 export class AuthService{
-  authUrl = "http://localhost:8080/web_app_lab_4_war_exploded/api/user";
-
+  authUrl = "http://localhost:8080/web-app-lab-4-1.0-SNAPSHOT/api/user";
+  // http://localhost:8080/web_app_lab_4_war_exploded/api/user
   constructor(private http: HttpClient) {
 
   }

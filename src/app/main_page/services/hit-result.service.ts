@@ -10,8 +10,8 @@ import {Hit} from "../models/Hit";
 })
 export class HitResultService {
 
-  hitUrl = "http://localhost:8080/web_app_lab_4_war_exploded/api/hit";
-
+  hitUrl = "http://localhost:8080/web-app-lab-4-1.0-SNAPSHOT/api/hit";
+  // http://localhost:8080/web_app_lab_4_war_exploded/api/hit
   constructor(private http: HttpClient) {
   }
 
