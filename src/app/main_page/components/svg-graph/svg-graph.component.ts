@@ -28,16 +28,4 @@ export class SvgGraphComponent implements OnInit {
   clearHits() {
     this.svgGraphService.clearHits();
   }
-
-  isHitting(row: Hit) {
-    let r = parseFloat(localStorage.getItem("r"));
-    let x = (row.x - 150) / 120 * r;
-    let y = (150 - row.y) / 120 * r;
-
-    return (
-      x * x + y * y <= r * r / 4 && x <= 0 && y > 0 ||
-      y < (-x + r / 2) && x >= 0 && y >= 0 ||
-      x >= 0 && x <= r / 2 && y <= 0 && y >= -r
-    );
-  }
 }

@@ -12,7 +12,7 @@ export class FormComponent {
 
   hit: Hit;
 
-  constructor(private hitResultService: HitResultService, private svgGraphService: SvgGraphService) {
+  constructor(private svgGraphService: SvgGraphService) {
     this.hit = new Hit(0, 0);
   }
 
@@ -22,7 +22,7 @@ export class FormComponent {
   rChanging() {
     localStorage.setItem("r", "" + this.hit.r);
     this.svgGraphService.redrawHits(this.hit.r);
-    // TODO сделать перерисовку и желательно в другом месте svg-graph.service
+
   }
 
   submitForm() {

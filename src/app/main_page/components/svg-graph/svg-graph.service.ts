@@ -25,8 +25,7 @@ export class SvgGraphService {
   public addHit(hit: Hit) {
     let r = parseFloat(localStorage.getItem("r"));
     hit.r = r;
-    const updatedHits = [...this.hitsSubject.value, hit];
-    this.hitsSubject.next(updatedHits);
+
 
     let convertedHit = new Hit((hit.x - 150) / 120 * r, (150 - hit.y) / 120 * r);
     convertedHit.r = r;
@@ -35,8 +34,14 @@ export class SvgGraphService {
       if (data.code === 401) {
         confirm("token lifetime has expired");
       }
+      else{
+        hit.hitting = data.message === "true";
+        const updatedHits = [...this.hitsSubject.value, hit];
+        this.hitsSubject.next(updatedHits);
+        localStorage.setItem(HITS, JSON.stringify(updatedHits));
+      }
     });
-    localStorage.setItem(HITS, JSON.stringify(updatedHits));
+
   }
 
   public addHitWithoutConverting(hit: Hit) {
@@ -52,11 +57,6 @@ export class SvgGraphService {
     });
     localStorage.setItem(HITS, JSON.stringify(updatedHits));
   }
-
-  public getHits(): Observable<Hit[]> {
-    return this.hitsSubject.asObservable();
-  }
-
   clearHits() {
     this.hitsSubject.next([]);
     localStorage.setItem(HITS, JSON.stringify([]));

@@ -10,4 +10,5 @@ export class Hit {
     this.y = y;
   }
 
+
 }

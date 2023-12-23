@@ -24,7 +24,7 @@ import {TokenInterceptor} from "./shared/auth/token.interceptor";
       multi: true,
       useClass: TokenInterceptor
     }
-    ],
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
