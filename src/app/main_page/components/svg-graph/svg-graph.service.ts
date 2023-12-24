@@ -41,7 +41,6 @@ export class SvgGraphService {
         localStorage.setItem(HITS, JSON.stringify(updatedHits));
       }
     });
-
   }
 
   public addHitWithoutConverting(hit: Hit) {
@@ -54,8 +53,14 @@ export class SvgGraphService {
       if (data.code === 401) {
         confirm("token lifetime has expired");
       }
+      else{
+        convertedHit.hitting = data.message === "true";
+        const updatedHits = [...this.hitsSubject.value, convertedHit];
+        this.hitsSubject.next(updatedHits);
+        localStorage.setItem(HITS, JSON.stringify(updatedHits));
+      }
     });
-    localStorage.setItem(HITS, JSON.stringify(updatedHits));
+    // localStorage.setItem(HITS, JSON.stringify(updatedHits));
   }
   clearHits() {
     this.hitsSubject.next([]);
